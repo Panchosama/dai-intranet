@@ -1,0 +1,6 @@
+<span>Documentos adjuntos:</span>
+<div *ngFor="let d of docs">
+	<div>
+		<i class="fa fa-file-{{d.tipo}}-o fa-2x"></i> <a href="{{d.archivo}}" target="_blank">{{d.nombre}}</a><br />
+	</div>
+</div>

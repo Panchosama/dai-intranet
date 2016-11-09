@@ -1,0 +1,14 @@
+<div class="panel-group">
+	<div class="panel panel-info" *ngFor="let n of noticias">
+		<div class="panel-heading">
+			<h3><img src="{{n.imagen}}" style="width: 50px; height: 50px;"/> {{n.titulo}}</h3>
+		</div>
+		<div class="panel-body">
+			<p>{{n.extracto}} ...</p>
+			<small>Fecha: {{n.fecha}} - Autor: {{n.autor}} - Area: {{n.depto}}</small>
+		</div>
+		<div class="panel-footer">
+			<a class="btn btn-default" routerLink="{{n.id}}">Leer noticia</a>
+		</div>
+	</div>
+</div>

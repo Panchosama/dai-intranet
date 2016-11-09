@@ -1,0 +1,9 @@
+<span>Imágenes</span><br />
+<div class="row">
+	<div class="col-xs-6 col-md-3">
+	
+	<a href="#" class="thumbnail" *ngFor="let i of imgs">
+		<img src="{{i.archivo}}" style="width:100px; height: auto; padding-right: 10px;" alt="{{i.nombre}}"/>
+	</a>
+	</div>
+</div>
