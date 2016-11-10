@@ -1,6 +1,7 @@
 import { NgModule }      			from '@angular/core';
 import { BrowserModule } 			from '@angular/platform-browser';
 import { HttpModule, JsonpModule }  from '@angular/http';
+import { FormsModule }				from '@angular/forms';
 
 import { RouterModule }				from '@angular/router';
 import { NgbModule }				from '@ng-bootstrap/ng-bootstrap';
@@ -13,7 +14,7 @@ import { NoticiasListComponent } 	from './noticias-list.component';
 import { NoticiaDocComponent }		from './noticia-doc.component';
 import { NoticiaImgComponent }		from './noticia-img.component';
 import { NoticiaComponent }			from './noticia.component';
-
+import { NoticiaCrearComponent }	from './noticia-crear.component';
 import { routing }					from './routing';
 
 @NgModule({
@@ -21,13 +22,15 @@ import { routing }					from './routing';
 				   HttpModule,
 				   JsonpModule,
 				   routing,
-				   NgbModule.forRoot()],
+				   NgbModule.forRoot(),
+				   FormsModule],
 	declarations: [AppComponent,
 				   MenuComponent,
 				   NoticiaComponent,
 				   NoticiasListComponent,
 				   NoticiaDocComponent,
-				   NoticiaImgComponent],
+				   NoticiaImgComponent,
+				   NoticiaCrearComponent],
 	providers:	  [NoticiasService],
 	bootstrap:    [AppComponent]
 })

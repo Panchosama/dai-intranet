@@ -1,12 +1,11 @@
 export class NoticiaNueva {
-	//id: number;
-	titulo: string;
-	cuerpo: string;
-	imagen: string;
-	//depto: string;
-	autor: string;
-	fecha: string;
-	docs: number;
-	//imgs: number;
-	//lectores: number;
+
+	constructor(
+		public titulo: string,
+		public cuerpo: string,
+		public depto : number,
+		public autor : number,
+		public fecha : string,
+		public categ : number
+	) { }
 }

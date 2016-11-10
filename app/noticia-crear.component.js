@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/router', './noticias.service', './rxjs-operators'], function(exports_1, context_1) {
+System.register(['@angular/core', './noticia-nueva', './rxjs-operators'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,48 +10,39 @@ System.register(['@angular/core', '@angular/router', './noticias.service', './rx
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, noticias_service_1;
+    var core_1, noticia_nueva_1;
     var NoticiaCrearComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (router_1_1) {
-                router_1 = router_1_1;
-            },
-            function (noticias_service_1_1) {
-                noticias_service_1 = noticias_service_1_1;
+            function (noticia_nueva_1_1) {
+                noticia_nueva_1 = noticia_nueva_1_1;
             },
             function (_1) {}],
         execute: function() {
             NoticiaCrearComponent = (function () {
-                //Constructor
-                function NoticiaCrearComponent(noticiasService, route, router) {
-                    this.noticiasService = noticiasService;
-                    this.route = route;
-                    this.router = router;
-                    this.mode = 'Observable';
+                function NoticiaCrearComponent() {
+                    this.model = new noticia_nueva_1.NoticiaNueva("Título", "Este es el cuerpo", 3, 15, '2016-03-12', 0);
+                    this.submitted = false;
                 }
-                NoticiaCrearComponent.prototype.getNoticia = function (idnew) {
-                    var _this = this;
-                    this.noticiasService.getNoticia(idnew)
-                        .subscribe(function (noticia) { return _this.noticia = noticia; }, function (error) { return _this.errorMessage = error; });
+                NoticiaCrearComponent.prototype.onSubmit = function () {
+                    this.submitted = true;
                 };
-                NoticiaCrearComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this.route.params.forEach(function (params) {
-                        var id = params['idnot'];
-                        _this.getNoticia(id);
-                        //.then(noticia => this.noticia = noticia);
-                    });
-                };
+                Object.defineProperty(NoticiaCrearComponent.prototype, "diagnostic", {
+                    get: function () {
+                        return JSON.stringify(this.model);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
                 NoticiaCrearComponent = __decorate([
                     core_1.Component({
                         selector: 'nueva-noticia',
                         templateUrl: 'app/noticia-crear.component.html'
                     }), 
-                    __metadata('design:paramtypes', [noticias_service_1.NoticiasService, router_1.ActivatedRoute, router_1.Router])
+                    __metadata('design:paramtypes', [])
                 ], NoticiaCrearComponent);
                 return NoticiaCrearComponent;
             }());

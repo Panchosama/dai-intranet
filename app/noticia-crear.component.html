@@ -1,5 +1,43 @@
-<!--
-	Este será un formulario de creación de noticias
-	Hay que implementar los módulos para subir imágenes y documentos, al pie del formulario
+<div class="col-md-12">
+    <h1>Crear Noticia</h1>
+    <form>
+      <div class="form-group">
+        <label for="titulo">Título</label>
+        <input type="text" class="form-control" id="titulo" required
+        [(ngModel)]="model.titulo" name="titulo">
+         Titulo escrito: {{model.titulo}}
+      </div>
 
--->
+      <div class="form-group">
+        <label for="cuerpo">Contenido</label>
+        <textarea class="form-control" id="cuerpo" required
+        [(ngModel)]="model.cuerpo" name="cuerpo"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="categ">Categoría</label>
+        <div class="checkbox-inline">
+	  		<label>
+			    <input type="checkbox" value="1">
+			    Intranet
+			</label>
+		</div>
+		<div class="checkbox-inline">
+			<label>
+		    	<input type="checkbox" value="2">
+		    	Pública
+		  	</label>
+		</div>
+	  </div>
+
+	  <div class="well">
+	  	Acá debe ir el espacio para las imágenes
+	  </div>
+
+	  <div class="well">
+	  	Acá debe ir el espacio para los documentos
+	  </div>	  
+
+      <button type="submit" class="btn btn-default">Enviar</button>
+    </form>
+</div>

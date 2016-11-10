@@ -5,7 +5,7 @@
 				<a (click)="isCollapsedNews=!isCollapsedNews"><i class="fa fa-newspaper-o"></i> Noticias <span class="caret"></span></a>
 				<ul [ngbCollapse]="isCollapsedNews" class="nav submenu" id="notiSub">
 					<li><a routerLink="/noticias">Leer noticias  <span class="badge">{{notpend}}</span></a></li>
-					<li><a href="#">Publicar noticia</a></li>
+					<li><a routerLink="/noticia/nueva">Publicar noticia</a></li>
 				</ul>
 			</li>
 			<li><a (click)="isCollapsedDocs=!isCollapsedDocs"><i class="fa fa-archive"></i> Documentaci&oacute;n <span class="caret"></span></a>

@@ -1,8 +1,7 @@
-import { Component , OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { NoticiaDet } from './noticia-det';
-import { NoticiasService } from './noticias.service';
+import { NoticiaNueva } from './noticia-nueva';
 
 import './rxjs-operators';
 
@@ -11,31 +10,19 @@ import './rxjs-operators';
 	templateUrl: 'app/noticia-crear.component.html'
 })
 
-export class NoticiaCrearComponent implements OnInit {
-//Variables
-	noticia: NoticiaDet[];
-	errorMessage: string;
+export class NoticiaCrearComponent{
+   
+   model= new NoticiaNueva("Título","Este es el cuerpo",3,15,'2016-03-12',0);
 
-	mode= 'Observable';
-//Constructor
-	constructor (private noticiasService: NoticiasService,
-				private route: ActivatedRoute,
-				private router: Router) { }
+   submitted= false;
 
-	getNoticia(idnew: string){
-		this.noticiasService.getNoticia(idnew)
-		.subscribe(
-           noticia => this.noticia = noticia,
-           error =>  this.errorMessage = <any>error);
-	}
+   onSubmit(){
+   	this.submitted=true
+   }
 
-  	ngOnInit(): void {
-		this.route.params.forEach((params: Params) => {
-	      	let id = params['idnot'];
-	      	this.getNoticia(id)
-       			//.then(noticia => this.noticia = noticia);
-    	});
-	}
+   get diagnostic() { 
+   	return JSON.stringify(this.model); 
+   }
 
-	
+
 }

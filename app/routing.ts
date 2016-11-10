@@ -2,7 +2,8 @@ import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NoticiasListComponent } from './noticias-list.component';
-import { NoticiaComponent }   	from './noticia.component';
+import { NoticiaComponent }   	 from './noticia.component';
+import { NoticiaCrearComponent } from './noticia-crear.component';
 
 const appRoutes: Routes = [
   {
@@ -13,10 +14,10 @@ const appRoutes: Routes = [
     path: 'noticias/:idnot',
     component: NoticiaComponent
   },
-  /*{
-    path: 'noticias/nueva',
+  {
+    path: 'noticia/nueva',
     component: NoticiaCrearComponent
-  },*/
+  },
   {
   	path: '',
   	redirectTo: '/noticias',
